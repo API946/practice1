@@ -1,0 +1,208 @@
+<batch10>
+	<campus>
+		<employees>
+			<employee>
+				<Name>Aditya</Name>
+				<Age>10</Age>
+			</employee>
+			<employee>
+				<Name>Ashwini</Name>
+				<Age>15</Age>
+			</employee>
+			<employee>
+				<Name>Arun</Name>
+				<Age>14</Age>
+			</employee>
+			<employee>
+				<Name>Trainer</Name>
+				<Age>13</Age>
+			</employee>
+			<employee>
+				<Name>Mohit</Name>
+				<Age>18</Age>
+			</employee>
+		</employees>
+	</campus>
+</batch10>
+
+
+{
+	"batch10" :{
+			"Campus" :{
+					"employees" :{
+							"employee" : [ {"Name" = "Aditya" ,"Age" = 10 } ,{"Name" = "Ashwini" ,"Age" = 15 } ,{"Name" = "Arun" ,"Age" = 14 } , {"Name" = "Trainer" ,"Age" = 14 } , {"Name" = "Mohit" ,"Age" = 14 }
+									]
+							}
+					}
+			}
+}
+
+
+
+<batch10>
+	<campus>
+		<employees>
+			<employee1>
+				<Name>Aditya</Name>
+				<Age>10</Age>
+			</employee1>
+			<employee2>
+				<Name>Ashwini</Name>
+				<Age>15</Age>
+			</employee2>
+			<employee3>
+				<Name>Arun</Name>
+				<Age>14</Age>
+			</employee3>
+			<employee4>
+				<Name>Trainer</Name>
+				<Age>13</Age>
+			</employee4>
+			<employee5>
+				<Name>Mohit</Name>
+				<Age>18</Age>
+			</employee5>
+		</employees>
+	</campus>
+</batch10>
+
+
+{
+	"batch10" :{
+			"Campus" :{
+					"employees" :{
+							"employee1" : {"Name" : "Aditya" ,"Age" : 10 } ,
+							"employee2" : {"Name" : "Ashwini" ,"Age" : 15} ,
+							"employee3" : {"Name" : "Arun" ,"Age" : 14} ,
+							"employee4" : {"Name" : "Arun" ,"Age" : 14 } ,
+							"employee5" : {"Name" : "Mohit" ,"Age" : 14 } ,
+							}
+					}
+		}
+}
+
+
+
+
+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>jason_porm_study</groupId>
+  <artifactId>porm_study</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+  <dependencies>
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <version>5.1.38</version>
+	</dependency>
+  </dependencies>
+  <!-- https://mvnrepository.com/artifact/junit/junit -->
+  <dependencies>
+	    <dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.13.1</version>
+	    <scope>test</scope>
+   </dependency>
+ </dependencies>
+<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+ <dependencies>
+ <dependency>
+	    <groupId>org.junit.jupiter</groupId>
+	    <artifactId>junit-jupiter-api</artifactId>
+	    <version>5.7.0</version>
+	    <scope>test</scope>
+  </dependency>
+ </dependencies>
+
+
+
+
+
+
+{
+	"project" :{ "modelVersion" : "4.0.0" , "groupId" : "jason_porm_study" , "artifactId" : "porm_study", "version :"0.0.1-SNAPSHOT" ,
+	"dependencies":{ "dependency": {  "groupId":"mysql", "artifactId":"mysql-connector-java", "version":"5.1.38" } ,
+			"dependency": {  "groupId":"junit", "artifactId":"junit", "version":"4.13.1" , "Scope" : "test" } ,
+			"dependency": {  "groupId":"org.junit.jupiter", "artifactId":"junit-jupiter-api", "version":"5.7.0" , "Scope" : "test" }
+			 }		
+		}	
+}
+
+
+
+
+{
+	"project" :{ "modelVersion" : "4.0.0" , "groupId" : "jason_porm_study" , "artifactId" : "porm_study", "version :"0.0.1-SNAPSHOT" ,
+	"dependencies":{ "dependency":[ {  "groupId":"mysql", "artifactId":"mysql-connector-java", "version":"5.1.38" } ,
+			 {  "groupId":"junit", "artifactId":"junit", "version":"4.13.1" , "Scope" : "test" } ,
+			 {  "groupId":"org.junit.jupiter", "artifactId":"junit-jupiter-api", "version":"5.7.0" , "Scope" : "test" }
+			 } ]		
+		}	
+}
+
+
+
+
+---
+	project :
+		modelVersion: 4.0.0
+		groupId: jason_porm_study
+                artifactId: porm_study
+		version : 0.0.1-SNAPSHOT
+		dependencies :
+			dependency:
+				-groupId: mysql
+				 artifactId: mysql-connector-java
+				 version: 5.1.38  
+				-groupId: junit
+				 artifactId: junit
+				 version: 4.13.1 
+				 scope: test
+				-groupId: org.junit.jupiter
+				 artifactId: junit-jupiter-api
+				 version: 5.7.0 
+				 scope: test
+		
+
+---
+
+
+
+Project:
+	xmlns: http://maven.apache.org/POM/4.0.0
+		-xsi: http://www.w3.org/2001/XMLSchema-instance
+			-schemaLocation: http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd
+	
+	modelVersion: 4.0.0
+	groupId: com.Sumanth
+	artifactId: XMLt0oJSON
+	version:0.0.1-SNAPSHOT
+	dependencies:	
+		dependecy:
+			-groupId: org.json
+			-artifactId: json
+			-version: 20180813
+		dependecy:
+			-groupId: org.json
+			-artifactId: json
+			-version: 20180813
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

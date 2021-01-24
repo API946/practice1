@@ -1,0 +1,141 @@
+use batch10
+'switched to db batch10'
+db.createCollection("campus")
+{ ok: 1 }
+db.campus.insert{
+"employee": {
+"name": "API",
+"salary": 5600,
+"married": false
+}
+}
+SyntaxError: Unexpected token, expected ";" (1:16)
+
+> 1 | db.campus.insert{
+    |                 ^
+  2 | "employee": {
+  3 | "name": "API",
+  4 | "salary": 5600,
+db.campus.insert({
+"employee": {
+"name": "API",
+"salary": 5600,
+"married": false
+}
+})
+'DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany or bulkWrite.'
+{ acknowledged: true,
+  insertedIds: { '0': ObjectId("60092fbcbb39253aacb6ec79") } }
+db.campus.insert({
+"employee": {
+"name": "Aditya",
+"salary": 1000,
+"married": false
+}
+})
+{ acknowledged: true,
+  insertedIds: { '0': ObjectId("600930edbb39253aacb6ec7a") } }
+db.campus.find()
+{ _id: ObjectId("60092fbcbb39253aacb6ec79"),
+  employee: { name: 'API', salary: 5600, married: false } }
+{ _id: ObjectId("600930edbb39253aacb6ec7a"),
+  employee: { name: 'Aditya', salary: 1000, married: false } }
+db.campus.find().pretty
+{ [Function: pretty]
+  returnType: 'Cursor',
+  serverVersions: [ '0.0.0', '999.999.999' ],
+  topologies: [ 0, 2, 1 ],
+  returnsPromise: false,
+  platforms: [ 0, 1, 2 ],
+  help: [Function] }
+db.campus.find().pretty()
+{ _id: ObjectId("60092fbcbb39253aacb6ec79"),
+  employee: { name: 'API', salary: 5600, married: false } }
+{ _id: ObjectId("600930edbb39253aacb6ec7a"),
+  employee: { name: 'Aditya', salary: 1000, married: false } }
+db.campus.findOne(name: 'Aditya')
+SyntaxError: Unexpected token, expected "," (1:22)
+
+> 1 | db.campus.findOne(name: 'Aditya')
+    |                       ^
+db.campus.findOne({"name" : 'Aditya'})
+null
+db.campus.insert({
+"name": "Trainer",
+"age": 10
+}
+)
+{ acknowledged: true,
+  insertedIds: { '0': ObjectId("60093367bb39253aacb6ec7b") } }
+db.campus.findOne({ name : "Trainer" })
+{ _id: ObjectId("60093367bb39253aacb6ec7b"),
+  name: 'Trainer',
+  age: 10 }
+db.campus.findOne(name: "Aditya")
+SyntaxError: Unexpected token, expected "," (1:22)
+
+> 1 | db.campus.findOne(name: "Aditya")
+    |                       ^
+db.campus.findOne( "60093367bb39253aacb6ec7b")
+MongoError: query selector must be an object
+db.campus.findOne( 60093367bb39253aacb6ec7b)
+SyntaxError: Identifier directly after number (1:27)
+
+> 1 | db.campus.findOne( 60093367bb39253aacb6ec7b)
+    |                            ^
+db.campus.findOne( { _id : "60093367bb39253aacb6ec7b" })
+null
+db.campus.findOne( { _id: ObjectId("60093367bb39253aacb6ec7b") } )
+{ _id: ObjectId("60093367bb39253aacb6ec7b"),
+  name: 'Trainer',
+  age: 10 }
+db.campus.find({ $and : [{ "name" : 'Trainer' },{"age" : 15}]  })
+db.campus.find({ $and : [{ "name" : 'Trainer' },{"age" : 10}]  })
+{ _id: ObjectId("60093367bb39253aacb6ec7b"),
+  name: 'Trainer',
+  age: 10 }
+db.campus.find({ $or : [{ "name" : 'Trainer' },{"age" : 10}]  })
+{ _id: ObjectId("60093367bb39253aacb6ec7b"),
+  name: 'Trainer',
+  age: 10 }
+db.campus.find({ $or : [{ "name" : 'Trainer' },{"age" : 15}]  })
+{ _id: ObjectId("60093367bb39253aacb6ec7b"),
+  name: 'Trainer',
+  age: 10 }
+db.campus.find({ $nor : [{ "name" : 'Trainer' },{"age" : 15}]  })
+{ _id: ObjectId("60092fbcbb39253aacb6ec79"),
+  employee: { name: 'API', salary: 5600, married: false } }
+{ _id: ObjectId("600930edbb39253aacb6ec7a"),
+  employee: { name: 'Aditya', salary: 1000, married: false } }
+db.campus.updateOne(  { "name" : "Trainer" } , { $set : { "name" : "Aditya" } }  )
+{ acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0 }
+db.campus.find()
+{ _id: ObjectId("60092fbcbb39253aacb6ec79"),
+  employee: { name: 'API', salary: 5600, married: false } }
+{ _id: ObjectId("600930edbb39253aacb6ec7a"),
+  employee: { name: 'Aditya', salary: 1000, married: false } }
+{ _id: ObjectId("60093367bb39253aacb6ec7b"),
+  name: 'Aditya',
+  age: 10 }
+db.campus.deleteOne( {"age" : 10 }   )
+{ acknowledged: true, deletedCount: 1 }
+db.campus.find()
+{ _id: ObjectId("60092fbcbb39253aacb6ec79"),
+  employee: { name: 'API', salary: 5600, married: false } }
+{ _id: ObjectId("600930edbb39253aacb6ec7a"),
+  employee: { name: 'Aditya', salary: 1000, married: false } }
+db.campus.deleteMany( { } )
+{ acknowledged: true, deletedCount: 2 }
+db.campus.find()
+db.campus.drop(  )
+true
+db.batch10()
+TypeError: db.batch10 is not a function
+db.batch10.drop()
+false
+db.dropDatabase()
+{ ok: 1, dropped: 'batch10' }
